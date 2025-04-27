@@ -1,0 +1,7 @@
+[project]
+name = "adaptyv-lab-ui"
+version = "0.1.0"
+description = "frontend for adaptyv lab"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = ["fastapi[standard]>=0.115.12"]
