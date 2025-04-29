@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from hamilton_protocols.registry import registry
 from pydantic import BaseModel
 
-app = FastAPI(title="Adaptyv Lab API")
+app = FastAPI(title="hamilton-runner API")
 
 # Enable CORS
 app.add_middleware(
@@ -21,8 +21,8 @@ registry.discover_protocols()
 
 
 class RunProtocolRequest(BaseModel):
-    params: dict[str, Any]
-    simulate: bool = True
+    params: dict[str, Any] = {}
+    simulate: bool = False
 
 
 @app.get("/protocols", response_model=list[dict[str, Any]])
@@ -109,4 +109,4 @@ async def run_protocol(protocol_id: str, request: RunProtocolRequest):
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run(app, host="0.0.0.0", port=5000)
+    uvicorn.run(app, host="0.0.0.0", port=8000)
