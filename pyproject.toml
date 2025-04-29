@@ -1,7 +1,7 @@
 [project]
-name = "adaptyv-lab-ui"
+name = "hamilton-runner"
 version = "0.1.0"
-description = "frontend for adaptyv lab"
+description = "hamilton-runner api and frontend"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = ["fastapi[standard]>=0.115.12", "hamilton-protocols"]
